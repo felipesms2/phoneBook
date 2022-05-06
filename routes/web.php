@@ -11,6 +11,16 @@
 |
 */
 
+Route::get('/insert', function ()
+{
+    return view('create');
+});
+
+
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class People extends Model
 {
-    $ta
+    protected $table = "user";
+    protected $fillable=['fullName','phoneNumber'];
 }
