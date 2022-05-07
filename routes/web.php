@@ -10,17 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/insert', function ()
-{
+Route::get('/insert', function () {
     return view('create');
 });
-
-
-
 
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::post('/register', 'PeopleController@store');
+

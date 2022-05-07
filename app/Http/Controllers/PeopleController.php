@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use  App\People;
 
 class PeopleController extends Controller
 {
@@ -34,7 +35,9 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $People = new People;
+        People::create($request->all());   
+    
     }
 
     /**
