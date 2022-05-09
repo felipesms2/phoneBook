@@ -35,7 +35,11 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        // $People = new People;
+        
+        $request->validate([
+            'fullName'=>'required',  
+            'phoneNumber'=>'required'  
+        ]);  
         People::create($request->all());   
     
     }

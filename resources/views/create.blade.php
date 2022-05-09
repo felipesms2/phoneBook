@@ -23,8 +23,20 @@
        @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Nome</label>
-          <input type="text" id="fullName" name="fullName" class="form-control">
+          <input 
+              type="text" 
+              id="fullName" 
+              name="fullName" 
+              class="form-control @error('fullName') is-invalid  @enderror"
+              value="{{old('fullName')}}"
+          >
+        @error('fullName')
+        <span class='invalid-feedback' role='alert'>
+            {{$message}}
+        </span>
+        @enderror
         </div>
+        
         <div class="form-group">
           <label for="exampleInputEmail1">Telefone</label>
           <input type="text"  id="phoneNumber" name="phoneNumber" class="form-control" ></input>
