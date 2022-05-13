@@ -13,6 +13,10 @@
 Route::get('/insert', function () {
     return view('create');
 });
+Route::get('people_list', 'PeopleController@index');
+
+
+
 
 
 

@@ -2,10 +2,14 @@
 @section('content')  
 <!DOCTYPE html>
 <html>
+  
 <head>
     <title>Criar contato</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" href="{{asset('css/app.scss')}}">
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 <body>
   <div class="container mt-4">
@@ -39,13 +43,29 @@
         
         <div class="form-group">
           <label for="exampleInputEmail1">Telefone</label>
-          <input type="text"  id="phoneNumber" name="phoneNumber" class="form-control" ></input>
+          <input 
+              type="text"  
+              id="phoneNumber" 
+              name="phoneNumber" 
+              class="form-control @error('phoneNumber') is-invalid  @enderror"
+          >
+        </input>
+              @error('phoneNumber')
+              <span class='invalid-feedback' role='alert'>
+                  {{$message}}
+              </span>
+              @enderror
         </div>
         <button type="submit" class="btn btn-primary form-control">Submit</button>
       </form>
     </div>
+    
+      @section('content-list')
+        @endsection
+      @yield('content-list')
   </div>
-</div>  
+
+</div> 
 </body>
 </html>
 

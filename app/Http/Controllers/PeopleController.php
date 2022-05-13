@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use  App\People;
+
 
 class PeopleController extends Controller
 {
@@ -14,7 +16,8 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        //
+        $person = People::all();
+        return view('people_list', ['person'=>$person]);
     }
 
     /**
