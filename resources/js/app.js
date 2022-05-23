@@ -6,6 +6,8 @@
 
 require('./bootstrap');
 import 'feather-icons';
+import $ from 'jquery';
+window.$ = window.jQuery = $;
 window.Vue = require('vue');
 
 /**
